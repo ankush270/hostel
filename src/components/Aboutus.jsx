@@ -101,7 +101,7 @@ const Aboutus = () => {
       </section>
 
       {/* Enhanced Why Choose Us section with animated counters and icons */}
-      <section className="w-full max-w-6xl mx-auto my-16 px-4 py-12 rounded-2xl shadow-xl animate-fade-in-section bg-gradient-to-br from-white via-teal-50 to-blue-50 relative overflow-hidden">
+      <section className="w-full max-w-6xl mx-auto my-16 px-4 py-12 animate-fade-in-section">
         <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-[#192F59] mb-2 flex items-center gap-2">
           Why Choose Us
           <svg className="w-8 h-8 text-teal-400 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
