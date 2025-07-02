@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { motion } from "framer-motion";
 
 const Aboutus = () => {
   return (
@@ -102,27 +103,56 @@ const Aboutus = () => {
       </section>
 
       {/* Enhanced Why Choose Us section with animated counters and icons */}
-      <section className="w-full max-w-6xl mx-auto my-16 px-4 py-12 animate-fade-in-section">
-        <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-[#192F59] mb-2 flex items-center gap-2">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        className="w-full max-w-6xl mx-auto my-16 px-4 py-12 animate-fade-in-section"
+      >
+        <motion.h2
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="text-3xl md:text-4xl font-extrabold font-serif text-[#192F59] mb-2 flex items-center gap-2"
+        >
           Why Choose Us
           <svg className="w-8 h-8 text-teal-400 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-        </h2>
-        <div className="w-32 h-1 bg-gradient-to-r from-[#192F59] via-teal-400 to-red-200 rounded-full mb-8 animate-gradient-x"></div>
-        {/* Animated Counters */}
+        </motion.h2>
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="w-32 h-1 bg-gradient-to-r from-[#192F59] via-teal-400 to-red-200 rounded-full mb-8 origin-left"
+        />
         <WhyChooseCounters />
-        <p className="text-gray-700 text-lg mb-6 mt-8">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="text-gray-700 text-lg mb-6 mt-8"
+        >
           <span className="font-bold text-[#192F59]">NITK</span> is located in Mangalore City along Kanyakumari-Mumbai National Highway 66. It is well connected by road, rail and by air to major cities in India and few international destinations. The Institute is located amid <span className="text-teal-600 font-semibold">300 acres of sylvan surroundings</span> with the picturesque Western Ghat Mountains.<br/><br/>
           It is ranked among <span className="font-bold text-[#192F59]">Top Engineering Institutes in India</span>. NITK, Surathkal. It has achieved rank <span className="text-teal-600 font-semibold">12 in NIRF ranking</span> of Engineering Colleges in India in 2023.
-        </p>
-        <ul className="list-none grid gap-6 md:grid-cols-2 text-base text-gray-800">
+        </motion.p>
+        <motion.ul
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.12 } }
+          }}
+          className="list-none grid gap-6 md:grid-cols-2 text-base text-gray-800"
+        >
           <li className="flex items-start gap-4 bg-white/80 rounded-xl p-4 shadow hover:scale-105 hover:shadow-lg transition-all duration-300 animate-fade-in-up"><span className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[#192F59] to-teal-400 text-white mr-2"><svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg></span>One of the <span className="font-bold text-[#192F59] ml-1">oldest and pioneer Technical Institutions</span> in India started in 1960.</li>
           <li className="flex items-start gap-4 bg-white/80 rounded-xl p-4 shadow hover:scale-105 hover:shadow-lg transition-all duration-300 animate-fade-in-up"><span className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[#192F59] to-teal-400 text-white mr-2"><svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6" /></svg></span>World class infrastructure and highly equipped labs and classrooms with all modern amenities.</li>
           <li className="flex items-start gap-4 bg-white/80 rounded-xl p-4 shadow hover:scale-105 hover:shadow-lg transition-all duration-300 animate-fade-in-up"><span className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[#192F59] to-teal-400 text-white mr-2"><svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 13V7a2 2 0 00-2-2H6a2 2 0 00-2 2v6" /></svg></span>Mega hostel blocks with state of the art facilities and Wi-Fi Connectivity.</li>
           <li className="flex items-start gap-4 bg-white/80 rounded-xl p-4 shadow hover:scale-105 hover:shadow-lg transition-all duration-300 animate-fade-in-up"><span className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[#192F59] to-teal-400 text-white mr-2"><svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 21h8M12 17v4" /></svg></span>Modern international standard swimming pool, gymnasium and individual standard fields for all major games and sports.</li>
           <li className="flex items-start gap-4 bg-white/80 rounded-xl p-4 shadow hover:scale-105 hover:shadow-lg transition-all duration-300 animate-fade-in-up"><span className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[#192F59] to-teal-400 text-white mr-2"><svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg></span>Rated as one of the <span className="font-bold text-[#192F59] ml-1">Best Engineering Colleges in India</span>.</li>
           <li className="flex items-start gap-4 bg-white/80 rounded-xl p-4 shadow hover:scale-105 hover:shadow-lg transition-all duration-300 animate-fade-in-up"><span className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[#192F59] to-teal-400 text-white mr-2"><svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2h5" /></svg></span>Linkages and Collaborations with various leading International and National Institutes, Industries and Organizations across the Globe.</li>
-        </ul>
-      </section>
+        </motion.ul>
+      </motion.section>
 
       {/* Quick Facts Card Grid (optional) */}
       <section className="w-full max-w-5xl mx-auto my-16 px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in-section">
@@ -148,6 +178,7 @@ const Aboutus = () => {
 };
 
 // Animated Counters Component
+import { motion as m } from "framer-motion";
 function WhyChooseCounters() {
   const counters = [
     { icon: <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>, label: "Established", target: 1960, prefix: "", suffix: "" },
@@ -172,17 +203,24 @@ function WhyChooseCounters() {
     return () => intervals.forEach(clearInterval);
   }, []);
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+    <m.div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
       {counters.map((counter, i) => (
-        <div key={counter.label} className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 hover:shadow-xl transition-transform duration-300 animate-fade-in-up">
+        <m.div
+          key={counter.label}
+          initial={{ opacity: 0, scale: 0.8, y: 30 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: i * 0.1 }}
+          className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 hover:shadow-xl transition-transform duration-300 animate-fade-in-up"
+        >
           <div className="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-[#192F59] to-teal-400 mb-3">
             {counter.icon}
           </div>
           <span className="text-3xl font-bold text-[#192F59] counter">{counter.prefix}{counts[i]}{counter.suffix}</span>
           <span className="text-sm text-gray-500 mt-1 text-center">{counter.label}</span>
-        </div>
+        </m.div>
       ))}
-    </div>
+    </m.div>
   );
 }
 

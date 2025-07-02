@@ -9,25 +9,50 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-[#192F59] shadow-md sticky top-0 z-50 border-b border-gray-200 rounded-b-2xl">
-      <div className="max-w-7xl mx-auto px-0 sm:px-0 lg:px-0">
-        <div className="flex items-center h-28">
-          {/* Logo */}
-          <img
-            src={LOGO_URL}
-            alt="NITK Emblem"
-            className="h-28 w-28 object-contain rounded-full hover:scale-110 hover:shadow-lg transition-transform duration-300 cursor-pointer"
-            title="NITK Home"
-            onClick={() => window.location.href = '/'}
-          />
-          {/* Title */}
-          <div className="flex flex-col justify-center ml-6">
-            <span className="font-extrabold text-4xl text-white tracking-wide drop-shadow">NITK</span>
-            <span className="text-2xl text-teal-300 font-semibold tracking-wide drop-shadow">Hostel</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center h-28 justify-between">
+          {/* Logo and Title */}
+          <div className="flex items-center">
+            <img
+              src={LOGO_URL}
+              alt="NITK Emblem"
+              className="h-28 w-28 object-contain rounded-full hover:scale-110 hover:shadow-lg transition-transform duration-300 cursor-pointer"
+              title="NITK Home"
+              onClick={() => window.location.href = '/'}
+            />
+            <div className="flex flex-col justify-center ml-6">
+              <span className="font-extrabold text-4xl text-white tracking-wide drop-shadow">NITK</span>
+              <span className="text-2xl text-teal-300 font-semibold tracking-wide drop-shadow">Hostel</span>
+            </div>
           </div>
-          {/* Navigation */}
-          <div className="flex-1 flex items-center justify-end space-x-8 ml-12">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex flex-1 items-center justify-end space-x-8 ml-12">
             <NavLinks location={location} />
           </div>
+          {/* Hamburger Button for Mobile */}
+          <button
+            className="md:hidden flex items-center justify-center p-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-400"
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+            type="button"
+          >
+            <span className="sr-only">Open main menu</span>
+            <svg
+              className="h-8 w-8 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              {menuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
+              )}
+            </svg>
+          </button>
         </div>
       </div>
       {/* Mobile menu with slide animation */}
@@ -79,7 +104,7 @@ const NavLinks = ({ mobile, onClick, location }) => (
 function navLinkClass(mobile, isActive) {
   return [
     mobile
-      ? `block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-teal-600 hover:text-white transition-colors relative ${isActive ? 'bg-teal-800' : ''}`
+      ? `block px-3 py-2 rounded-md text-base font-medium text-[#192F59] hover:bg-teal-600 hover:text-white transition-colors relative ${isActive ? 'bg-teal-800 text-white' : ''}`
       : `text-white no-underline text-lg font-semibold px-3 py-2 rounded-md hover:text-teal-300 transition-colors focus:outline-none relative`,
     "group"
   ].join(" ");
