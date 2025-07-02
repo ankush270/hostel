@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const Aboutus = () => {
   return (
@@ -141,6 +142,7 @@ const Aboutus = () => {
           <span className="text-gray-600 text-center mt-2">Consistently among India's best engineering colleges</span>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

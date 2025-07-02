@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutUs from './components/AboutUs'
+import AboutUs from './components/Aboutus'
 
 const App = () => {
   return (
