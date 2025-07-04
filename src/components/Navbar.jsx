@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="w-full bg-[#192F59] shadow-md sticky top-0 z-50 border-b border-gray-200 rounded-b-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-28 justify-between">
-          {/* Logo and Title */}
+          
           <div className="flex items-center">
             <img
               src={LOGO_URL}
@@ -25,11 +25,11 @@ const Navbar = () => {
               <span className="text-2xl text-teal-300 font-semibold tracking-wide drop-shadow">Hostel</span>
             </div>
           </div>
-          {/* Desktop Navigation */}
+          
           <div className="hidden md:flex flex-1 items-center justify-end space-x-8 ml-12">
             <NavLinks location={location} />
           </div>
-          {/* Hamburger Button for Mobile */}
+          
           <button
             className="md:hidden flex items-center justify-center p-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-400"
             aria-label="Toggle menu"
@@ -55,7 +55,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-      {/* Mobile menu with slide animation */}
+      
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
         id="mobile-menu"
