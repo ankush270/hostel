@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { useNavigate } from 'react-router-dom';
 const noticesData = [
   {
     id: 1,
@@ -89,14 +90,14 @@ const InformationNotifications = () => {
       (filter === "Urgent" && notice.tag.label === "URGENT") ||
       (filter === "Rules" && notice.title.toLowerCase().includes("rule")) ||
       (filter === "Deadlines" && notice.title.toLowerCase().includes("allotment")) ||
-      (filter === "Events" && false); // No event notices in sample
+      (filter === "Events" && false); 
     return matchesSearch && matchesFilter;
   });
 
   return (
     <section className="py-10 px-2 md:px-0 bg-[#f7f9fa]">
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
+       
         <div className="mb-8 flex flex-col items-center">
           <div className="flex items-center gap-3 mb-2">
             <span className="text-3xl text-green-600">🔔</span>
@@ -104,7 +105,7 @@ const InformationNotifications = () => {
           </div>
           <p className="text-gray-500 text-base md:text-lg text-center">Stay updated with latest hostel circulars, rules, and deadlines.</p>
         </div>
-        {/* Search & Filter */}
+      
         <div className="flex flex-col md:flex-row md:items-center md:justify-end gap-2 mb-6">
           <input
             type="text"
@@ -123,9 +124,9 @@ const InformationNotifications = () => {
             ))}
           </select>
         </div>
-        {/* Main Content Grid */}
+     
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Notices Panel */}
+          
           <div className="bg-white rounded-2xl shadow p-5 flex flex-col gap-3 border border-gray-100">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2 text-blue-700 font-semibold text-lg">
@@ -154,7 +155,7 @@ const InformationNotifications = () => {
             </div>
             <a href="#" className="text-blue-600 font-medium mt-2 text-sm flex items-center gap-1 hover:underline justify-center">View All Notices <span>→</span></a>
           </div>
-          {/* Events Panel */}
+      
           <div className="bg-white rounded-2xl shadow p-5 flex flex-col gap-3 border border-gray-100">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2 text-teal-700 font-semibold text-lg">
@@ -184,7 +185,7 @@ const InformationNotifications = () => {
             <a href="#" className="text-teal-600 font-medium mt-2 text-sm flex items-center gap-1 hover:underline justify-center">View Calendar <span>→</span></a>
           </div>
         </div>
-        {/* Footer Links */}
+     
         <div className="flex flex-wrap justify-center gap-6 mt-8 border-t pt-6">
           {footerLinks.map(link => (
             <a key={link.label} href={link.href} className="flex items-center gap-2 text-blue-700 font-medium hover:underline text-base">
@@ -321,11 +322,11 @@ const GallerySlider = () => {
           alt={images[current].alt}
           className="w-full h-[28rem] md:h-[34rem] object-cover rounded-3xl transition-all duration-500"
         />
-        {/* Caption overlay */}
+        
         <div className="absolute bottom-0 left-0 w-full px-4 py-3 bg-gradient-to-t from-black/70 to-transparent flex items-end rounded-b-3xl">
           <span className="text-white font-semibold text-lg drop-shadow">{images[current].caption}</span>
         </div>
-        {/* Left arrow */}
+
         <button
           onClick={prev}
           className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-[#192F59] rounded-full p-2 shadow transition z-10"
@@ -333,7 +334,7 @@ const GallerySlider = () => {
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
         </button>
-        {/* Right arrow */}
+      
         <button
           onClick={next}
           className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-[#192F59] rounded-full p-2 shadow transition z-10"
@@ -342,7 +343,7 @@ const GallerySlider = () => {
           <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
         </button>
       </div>
-      {/* Dots */}
+    
       <div className="flex gap-2 mt-4">
         {images.map((_, idx) => (
           <button
@@ -398,11 +399,11 @@ function HeroSection() {
 }
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-gradient-to-br from-blue-50 to-white min-h-screen">
       <Navbar />
       <HeroSection />
-      {/* Move About section here */}
       <motion.section 
         className="py-8 bg-white"
         initial={{ opacity: 0, y: 40 }}
@@ -419,11 +420,11 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch gap-10 mt-8">
-          {/* Left: Image */}
+         
           <div className="flex-shrink-0 w-full md:w-7/12 flex justify-center items-center mb-6 md:mb-0">
             <img src="/main1.jpg" alt="NITK Hostel" className="rounded-2xl shadow-lg w-full max-w-2xl object-cover h-56 md:h-72" />
           </div>
-          {/* Right: Message */}
+          
           <div className="w-full md:w-5/12 flex flex-col justify-center items-center md:items-start text-center md:text-left relative">
             <span className="absolute -left-8 -top-6 text-[7rem] text-blue-100 opacity-40 select-none hidden md:block" aria-hidden="true">"</span>
             <p className="font-serif text-lg md:text-xl leading-relaxed text-gray-900">
@@ -433,7 +434,7 @@ const LandingPage = () => {
         </div>
       </motion.section>
 
-      {/* Information & Notifications section follows */}
+      
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -443,7 +444,6 @@ const LandingPage = () => {
         <InformationNotifications />
       </motion.div>
 
-      {/* Gallery Section */}
       <motion.section 
         className="py-10 bg-gradient-to-br from-blue-50 via-white to-blue-100"
         initial={{ opacity: 0, y: 40 }}
@@ -453,17 +453,10 @@ const LandingPage = () => {
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#192F59] text-center">Gallery</h2>
         <GallerySlider />
-        <div className="flex justify-center mt-6">
-          <button
-            className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-full shadow hover:bg-blue-700 transition"
-            onClick={() => { /* TODO: Add view more logic */ }}
-          >
-            View More
-          </button>
-        </div>
+        <GalleryViewMoreButton />
       </motion.section>
 
-      {/* Facilities Section */}
+  
       <motion.section 
         className="py-8 bg-[#f6fafd]"
         initial={{ opacity: 0, y: 40 }}
@@ -532,5 +525,20 @@ const LandingPage = () => {
     </div>
   );
 };
+
+// Gallery View More Button
+function GalleryViewMoreButton() {
+  const navigate = useNavigate();
+  return (
+    <div className="flex justify-center mt-6">
+      <button
+        className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-full shadow hover:bg-blue-700 transition"
+        onClick={() => navigate('/gallery')}
+      >
+        View More
+      </button>
+    </div>
+  );
+}
 
 export default LandingPage; 
