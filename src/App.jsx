@@ -1,10 +1,10 @@
 import React from 'react'
-import AboutUs from './components/Aboutus'
+import LandingPage from './components/LandingPage'
 
 const App = () => {
   return (
     <div>
-      <AboutUs/>
+      <LandingPage/>
     </div>
   )
 }
