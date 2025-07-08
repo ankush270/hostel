@@ -20,7 +20,7 @@ const generalLinks = [
 const Footer = () => (
   <footer className="bg-black text-white w-full py-4 px-4 mt-12">
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-10 md:gap-0">
-      {/* Left: Address/Contact */}
+      
       <div className="flex-1 flex flex-col items-center md:items-start mb-8 md:mb-0">
         <div className="text-center md:text-left">
           <div className="text-xl font-semibold mb-1">NITK Hostels Trust</div>
@@ -29,7 +29,7 @@ const Footer = () => (
           <a href="mailto:chiefwarden@nitk.edu.in" className="text-blue-400 hover:underline block mt-1">chiefwarden@nitk.edu.in</a>
         </div>
       </div>
-      {/* Center: Quick Links */}
+  
       <div className="flex-1 flex flex-col items-center">
         <div className="text-2xl font-semibold mb-2">Quick Links</div>
         <div className="w-48 h-0.5 bg-green-400 mb-3"></div>
@@ -41,7 +41,7 @@ const Footer = () => (
           ))}
         </ul>
       </div>
-      {/* Right: General Links */}
+      
       <div className="flex-1 flex flex-col items-center relative">
         <div className="text-2xl font-semibold mb-2">General Links</div>
         <div className="w-48 h-0.5 bg-green-400 mb-3"></div>

@@ -8,9 +8,9 @@ const Aboutus = () => {
     <>
       <Navbar />
      
-      {/* Hero/Intro Section */}
+      
       <section className="relative w-full py-20 px-4 text-center animate-fade-in-section overflow-hidden min-h-[400px]">
-        {/* Full-width background image */}
+      
         <img
           src="/campus-bg.avif"
           alt="NITK Campus"
@@ -24,7 +24,7 @@ const Aboutus = () => {
         </div>
       </section>
 
-      {/* Our Vision section */}
+      
       <section className="w-full max-w-4xl mx-auto my-12 px-4 py-8 bg-white rounded-2xl shadow-lg border-l-4 border-[#192F59] flex flex-col md:flex-row items-center gap-6 animate-fade-in-section">
         <div className="flex-shrink-0 flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#192F59] to-teal-400 rounded-full shadow-md">
           <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m4 0h-1v-4h-1m-4 0h-1v-4h-1" /></svg>
@@ -38,11 +38,11 @@ const Aboutus = () => {
         </div>
       </section>
 
-      {/* Enhanced Director's Message section */}
+      
       <section className="w-full max-w-6xl mx-auto my-16 px-4 flex flex-col md:flex-row items-start gap-10 md:gap-16 bg-white py-12 border-b border-red-200 animate-fade-in-section relative overflow-hidden" style={{boxShadow:'none', borderRadius:0}}>
-        {/* Decorative Quote Icon */}
+      
         <svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 w-[320px] h-[320px] hidden md:block pointer-events-none" fill="none" viewBox="0 0 120 120"><text x="0" y="100" fontSize="120" fontFamily="serif" fill="#192F59">"</text></svg>
-        {/* Left: Director's Photo */}
+        
         <div className="flex-shrink-0 w-full md:w-[380px] flex justify-center md:justify-start">
           <img
             src="https://hostels.nitk.edu.in/static/media/Director.cd15104f.jpg"
@@ -51,7 +51,7 @@ const Aboutus = () => {
             style={{borderRadius:'8px'}}
           />
         </div>
-        {/* Right: Heading + Message */}
+        
         <div className="flex-1 flex flex-col justify-between h-full animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-extrabold font-serif text-[#222] mb-2 flex items-center gap-3" style={{lineHeight:'1.1'}}>Director's Message
             <svg className="w-8 h-8 text-teal-400 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
@@ -70,11 +70,11 @@ const Aboutus = () => {
         </div>
       </section>
 
-      {/* Enhanced Chief Warden's Message section */}
+      
       <section className="w-full max-w-6xl mx-auto my-16 px-4 flex flex-col md:flex-row items-start gap-10 md:gap-16 bg-white py-12 border-b border-red-200 animate-fade-in-section relative overflow-hidden" style={{boxShadow:'none', borderRadius:0}}>
-        {/* Decorative Quote Icon */}
+        
         <svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 w-[320px] h-[320px] hidden md:block pointer-events-none" fill="none" viewBox="0 0 120 120"><text x="0" y="100" fontSize="120" fontFamily="serif" fill="#192F59">"</text></svg>
-        {/* Left: Chief Warden's Photo */}
+        
         <div className="flex-shrink-0 w-full md:w-[380px] flex justify-center md:justify-start">
           <img
             src="https://hostels.nitk.edu.in/static/media/chief-warden.004a262c.jpg"
@@ -83,7 +83,7 @@ const Aboutus = () => {
             style={{borderRadius:'8px'}}
           />
         </div>
-        {/* Right: Heading + Message */}
+        
         <div className="flex-1 flex flex-col justify-between h-full animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-extrabold font-serif text-[#222] mb-2 flex items-center gap-3" style={{lineHeight:'1.1'}}>Chief Warden's Message
             <svg className="w-8 h-8 text-teal-400 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
@@ -102,7 +102,7 @@ const Aboutus = () => {
         </div>
       </section>
 
-      {/* Enhanced Why Choose Us section with animated counters and icons */}
+      
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ const Aboutus = () => {
         </motion.ul>
       </motion.section>
 
-      {/* Quick Facts Card Grid (optional) */}
+      
       <section className="w-full max-w-5xl mx-auto my-16 px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in-section">
         <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform duration-300">
           <svg className="w-10 h-10 text-teal-500 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
