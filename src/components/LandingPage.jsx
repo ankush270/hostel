@@ -453,6 +453,14 @@ const LandingPage = () => {
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#192F59] text-center">Gallery</h2>
         <GallerySlider />
+        <div className="flex justify-center mt-6">
+          <button
+            className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-full shadow hover:bg-blue-700 transition"
+            onClick={() => { /* TODO: Add view more logic */ }}
+          >
+            View More
+          </button>
+        </div>
       </motion.section>
 
       {/* Facilities Section */}
