@@ -277,7 +277,7 @@ const Hostelform = () => {
                     <div className="flex justify-between mt-10">
                       <button type="button" onClick={prevStep} disabled={step === 0} className={`px-6 py-2 rounded-lg font-semibold transition duration-200 ${step === 0 ? 'bg-slate-200 text-slate-400 cursor-not-allowed' : 'bg-blue-100 text-blue-700 hover:bg-blue-200 shadow-md'}`}>Previous</button>
                       {step < formSteps.length - 1 ? (
-                        <button type="button" onClick={nextStep} className="px-6 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 hover:scale-105 transition duration-200 shadow-md">Next</button>
+                        <button type="button" onClick={nextStep} className="px-6 py-2 rounded-lg font-semibold text-white bg-[#192f59] hover:bg-[#23396e] hover:scale-105 transition duration-200 shadow-md">Next</button>
                       ) : (
                         <button type="submit" className="px-6 py-2 rounded-lg bg-green-600 text-white font-semibold hover:bg-green-700 hover:scale-105 transition duration-200 shadow-md">Submit</button>
                       )}
