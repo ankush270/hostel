@@ -74,6 +74,7 @@ const navItems = [
   { to: "/people", label: "People" },
   { to: "/hostels", label: "Hostels" },
   { to: "/gallery", label: "Gallery" },
+  { to: "/hostelform", label: "Hostel Form" },
   { to: "/admin", label: "Admin" },
   { to: "/login", label: "Login" },
 ];
