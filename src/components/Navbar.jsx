@@ -75,6 +75,7 @@ const navItems = [
   { to: "/hostels", label: "Hostels" },
   { to: "/gallery", label: "Gallery" },
   { to: "/admin", label: "Admin" },
+  { to: "/login", label: "Login" },
 ];
 
 const NavLinks = ({ mobile, onClick, location }) => (
